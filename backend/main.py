@@ -31,7 +31,7 @@ app = FastAPI(title="Vidya AI Backend")
 # have it (or set ALLOWED_ORIGINS as a comma-separated env var on Render).
 default_origins = [
     "http://localhost:3000",
-    "https://vidya-ai.vercel.app",
+    "https://sdg-4-vidya-ai.vercel.app",
 ]
 env_origins = os.environ.get("ALLOWED_ORIGINS", "")
 allowed_origins = default_origins + [o.strip() for o in env_origins.split(",") if o.strip()]
