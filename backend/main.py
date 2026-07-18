@@ -223,3 +223,9 @@ def tutor(req: TutorRequest):
         raise HTTPException(status_code=500, detail="The tutor couldn't respond right now. Check your API keys in Render's environment variables.")
 
     return {"reply": reply}
+@app.get("/debug")
+def debug():
+    return {
+        "message": "This is the latest backend",
+        "file": __file__,
+    }
