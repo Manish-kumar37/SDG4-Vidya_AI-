@@ -25,7 +25,15 @@ from prompt_builder import build_system_prompt, build_evaluation_note
 load_dotenv()
 
 app = FastAPI(title="Vidya AI Backend")
+import os
 
+print("RUNNING FILE:", __file__)
+@app.get("/debug")
+def debug():
+    return {
+        "file": __file__,
+        "cwd": os.getcwd(),
+    }
 # ---- CORS ----
 # Allow your deployed frontend + local dev. Add your real Vercel URL once you
 # have it (or set ALLOWED_ORIGINS as a comma-separated env var on Render).
