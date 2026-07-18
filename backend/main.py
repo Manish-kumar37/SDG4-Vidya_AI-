@@ -24,7 +24,15 @@ from prompt_builder import build_system_prompt, build_evaluation_note
 
 load_dotenv()
 
-app = FastAPI(title="Vidya AI Backend")
+from fastapi import FastAPI
+
+app = FastAPI(
+    title="Vidya AI Backend",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+)
+print("=== APP CREATED ===")
 import os
 
 print("RUNNING FILE:", __file__)
